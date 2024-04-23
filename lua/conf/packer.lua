@@ -28,6 +28,7 @@ use ({ 'rose-pine/neovim',
 
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
+use('nvim-tree/nvim-tree.lua')
 use('ThePrimeagen/harpoon')
 use('mbbill/undotree')
 use('tpope/vim-fugitive')
@@ -49,6 +50,10 @@ use {
     {'L3MON4D3/LuaSnip'},
   }
 }
+
+use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  require("toggleterm").setup()
+end}
 
 
 end)
