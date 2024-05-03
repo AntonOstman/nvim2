@@ -19,17 +19,15 @@ use { "ellisonleao/gruvbox.nvim",
         vim.cmd('colorscheme gruvbox')
     end
 }
-use ({ 'rose-pine/neovim',
-	as = 'reose-pine',
-	config = function()
-		vim.cmd('colorscheme rose-pine')
-	end
-})
 
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
 use('nvim-tree/nvim-tree.lua')
-use('ThePrimeagen/harpoon')
+use{'nvim-lua/plenary.nvim'}
+use{'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    requires = { {"nvim-lua/plenary.nvim"} }
+}
 use('mbbill/undotree')
 use('tpope/vim-fugitive')
 
@@ -51,9 +49,21 @@ use {
   }
 }
 
-use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-  require("toggleterm").setup()
-end}
-
+use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+}
+-- Project managing
+use {
+  "ahmedkhalf/project.nvim",
+  config = function()
+    require("project_nvim").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
+use('ludovicchabant/vim-gutentags')
 
 end)
