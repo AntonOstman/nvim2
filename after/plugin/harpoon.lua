@@ -2,7 +2,6 @@ local harpoon = require("harpoon")
 
 harpoon:setup()
 
-
 local toggle_opts = {
     border = "rounded",
     title_pos = "center",
@@ -10,11 +9,29 @@ local toggle_opts = {
 }
 
 
+-- add to terminal list if current buf is terminal
 local function term_add()
     if vim.bo.buftype == 'terminal' then
         harpoon:list("term"):add()
     else
         harpoon:list():add()
+    end
+end
+
+-- create terminal if it does not exist
+local function select_term(index)
+
+    local item = harpoon:list("term"):get(index)
+    if item then
+        harpoon:list("term"):select(index)
+        -- If terminal was previously killed 
+        -- make sure we save this new one to harpoon
+        local list = harpoon:list("term")
+        local new_item = list.config:create_list_item()
+        harpoon:list("term").items[index] = new_item
+    else
+        vim.cmd([[term]])
+        term_add()
     end
 end
 
@@ -27,10 +44,10 @@ vim.keymap.set("n", "<C-h>", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
 
 -- Terminal lists
-vim.keymap.set("n", "<leader>1", function() harpoon:list("term"):select(1) end)
-vim.keymap.set("n", "<leader>2", function() harpoon:list("term"):select(2) end)
-vim.keymap.set("n", "<leader>3", function() harpoon:list("term"):select(3) end)
-vim.keymap.set("n", "<leader>4", function() harpoon:list("term"):select(4) end)
+vim.keymap.set("n", "<leader>1", function() select_term(1) end)
+vim.keymap.set("n", "<leader>2", function() select_term(2) end)
+vim.keymap.set("n", "<leader>3", function() select_term(3) end)
+vim.keymap.set("n", "<leader>4", function() select_term(4) end)
 vim.keymap.set("n", "<leader>te", function() harpoon.ui:toggle_quick_menu(harpoon:list("term"), toggle_opts) end)
 
 
