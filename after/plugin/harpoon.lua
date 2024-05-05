@@ -1,21 +1,75 @@
---local mark = require('harpoon.mark')
---local ui = require('harpoon.ui')
---
---vim.keymap.set("n","<leader>a", mark.add_file)
---vim.keymap.set("n","<leader>e", ui.toggle_quick_menu)
-
 local harpoon = require("harpoon")
 
 harpoon:setup()
 
-local conf  = require("telescope.config").values
 
---vim.keymap.set("n", "<leader>e", function() toggle_telescope(harpoon:list()) end,  { desc = "Open harpoon window"})
+local toggle_opts = {
+    border = "rounded",
+    title_pos = "center",
+    ui_width_ratio = 0.40,
+}
 
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
-vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
-vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
-vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
+local function term_add()
+    if vim.bo.buftype == 'terminal' then
+        harpoon:list("term"):add()
+    else
+        harpoon:list():add()
+    end
+end
+
+vim.keymap.set("n", "<leader>a", function() term_add() end)
+vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon:list(),toggle_opts) end)
+
+vim.keymap.set("n", "<C-j>", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<C-k>", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<C-h>", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
+
+-- Terminal lists
+vim.keymap.set("n", "<leader>1", function() harpoon:list("term"):select(1) end)
+vim.keymap.set("n", "<leader>2", function() harpoon:list("term"):select(2) end)
+vim.keymap.set("n", "<leader>3", function() harpoon:list("term"):select(3) end)
+vim.keymap.set("n", "<leader>4", function() harpoon:list("term"):select(4) end)
+vim.keymap.set("n", "<leader>te", function() harpoon.ui:toggle_quick_menu(harpoon:list("term"), toggle_opts) end)
+
+
+
+-- custom list example (that actually works)
+
+--[=[
+    ["test"] = {
+
+        -- When you call list:add() this function is called and the return
+        -- value will be put in the list at the end.
+        --
+        -- which means same behavior for prepend except where in the list the
+        -- return value is added
+        --
+        -- @param possible_value string only passed in when you alter the ui manual
+        create_list_item = function(possible_value)
+            -- get the current line idx
+            local idx = vim.fn.line(".")
+
+            -- read the current line
+            local cmd = vim.api.nvim_buf_get_lines(0, idx - 1, idx, false)[1]
+            if cmd == nil then
+                return nil
+            end
+
+            return {
+                value = cmd,
+                context = {},
+            }
+        end,
+
+        select = function(list_item, list, option)
+            -- WOAH, IS THIS HTMX LEVEL XSS ATTACK??
+            vim.cmd(list_item.value)
+        end
+
+    }
+vim.keymap.set("n", "<C-l>", function() custom.ui:toggle_quick_menu(custom:list()) end)
+vim.keymap.set("n", "<C-l>", function() harpoon.ui:toggle_quick_menu(harpoon:list("test")) end)
+vim.keymap.set("n", "<leader>ha", function() harpoon:list("test"):add() end)
+    --]=]
