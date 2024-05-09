@@ -1,6 +1,15 @@
 
 
 -- vim bindings
+--
+--
+local function buffer_delete()
+    if vim.bo.buftype == 'terminal' then
+        vim.cmd("bd!")
+    else
+        vim.cmd("bd")
+    end
+end
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>fs", vim.cmd.w)
 vim.keymap.set("n", "<leader>wq", vim.cmd.q)
@@ -13,7 +22,7 @@ vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
 vim.keymap.set('n', '<leader>wd', '<C-w>c')
 vim.keymap.set('n', '<leader>ft', ':NvimTreeToggle<enter>')
 vim.keymap.set('n', '<leader>pt', ':NvimTreeFocus<enter>')
-vim.keymap.set('n', '<leader>bd', ':bdelete<enter>')
+vim.keymap.set('n', '<leader>bd', function() buffer_delete() end)
 vim.keymap.set('n', '<leader>;', ':ToggleTerm<enter>')
 vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
 
