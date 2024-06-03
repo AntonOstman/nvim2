@@ -46,17 +46,12 @@ use {
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'L3MON4D3/LuaSnip'},
+    -- debugger
+    {"mfussenegger/nvim-dap"},
+    {"jay-babu/mason-nvim-dap.nvim"},
   }
 }
 
-use {
-    "nvim-telescope/telescope-file-browser.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-}
--- Project managing
-use {
-  "ahmedkhalf/project.nvim"
-}
-use('ludovicchabant/vim-gutentags')
+use{"christoomey/vim-tmux-navigator"}
 
 end)

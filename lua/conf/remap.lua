@@ -20,12 +20,15 @@ vim.keymap.set('n', '<leader>wl', '<C-w><C-l>')
 vim.keymap.set('n', '<leader>wk', '<C-w><C-k>')
 vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
 vim.keymap.set('n', '<leader>wd', '<C-w>c')
-vim.keymap.set('n', '<leader>ft', ':NvimTreeToggle<enter>')
-vim.keymap.set('n', '<leader>pt', ':NvimTreeFocus<enter>')
 vim.keymap.set('n', '<leader>bd', function() buffer_delete() end)
-vim.keymap.set('n', '<leader>;', ':ToggleTerm<enter>')
 vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
 
+-- Tmux navigation
+
+vim.keymap.set('n', '<C-h>', ':silent <C-U>TmuxNavigateRight<cr>')
+vim.keymap.set('n', '<C-l>', ':silent <C-U>TmuxNavigateLeft<cr>')
+vim.keymap.set('n', '<C-j>', ':silent <C-U>TmuxNavigateDown<cr>')
+vim.keymap.set('n', '<C-k>', ':silent <C-U>TmuxNavigateUp<cr>')
 
 -- nvim terminal 
 vim.api.nvim_set_keymap("t", '<C-;>', "<C-\\><C-n>", {noremap = true})
@@ -38,6 +41,6 @@ vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
 
 
 -- Projects
-vim.keymap.set('n', '<leader>pp', function() require'telescope'.extensions.projects.projects{} end)
+--vim.keymap.set('n', '<leader>pp', function() require'telescope'.extensions.projects.projects{} end)
 -- v':Telescope neovim-project discover<enter>'':Telescope neovim-project discover<enter>'im.keymap.set('n', '<leader>Ph', ':Telescope neovim-project history<enter>', opts)
 

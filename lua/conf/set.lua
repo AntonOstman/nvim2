@@ -23,7 +23,7 @@ vim.g.mapleader = " "
 vim.o.splitbelow = true
 
 vim.o.cb = 'unnamedplus'
-vim.o.signcolumn = 'no'
+-- vim.o.signcolumn = 'no'
 
 -- turn off stupid
 
