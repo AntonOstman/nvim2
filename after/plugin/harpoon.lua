@@ -41,14 +41,14 @@ vim.keymap.set("n", "<leader>e", function() harpoon.ui:toggle_quick_menu(harpoon
 vim.keymap.set("n", "<leader>j", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<leader>k", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<leader>h", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<leader>l>", function() harpoon:list():select(4) end)
+vim.keymap.set("n", "<leader>l", function() harpoon:list():select(4) end)
 
 -- Terminal lists
-vim.keymap.set("n", "<leader>1", function() select_term(1) end)
-vim.keymap.set("n", "<leader>2", function() select_term(2) end)
-vim.keymap.set("n", "<leader>3", function() select_term(3) end)
-vim.keymap.set("n", "<leader>4", function() select_term(4) end)
-vim.keymap.set("n", "<leader>te", function() harpoon.ui:toggle_quick_menu(harpoon:list("term"), toggle_opts) end)
+--vim.keymap.set("n", "<leader>1", function() select_term(1) end)
+--vim.keymap.set("n", "<leader>2", function() select_term(2) end)
+--vim.keymap.set("n", "<leader>3", function() select_term(3) end)
+--vim.keymap.set("n", "<leader>4", function() select_term(4) end)
+--vim.keymap.set("n", "<leader>te", function() harpoon.ui:toggle_quick_menu(harpoon:list("term"), toggle_opts) end)
 
 
 

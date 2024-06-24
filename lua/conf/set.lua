@@ -28,3 +28,9 @@ vim.o.cb = 'unnamedplus'
 -- turn off stupid
 
 vim.o.modeline = false
+
+-- colors
+vim.o.termguicolors = true
+
+--Trainling whitespace
+-- match errorMsg /\s\+$/

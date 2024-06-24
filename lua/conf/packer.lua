@@ -22,7 +22,6 @@ use { "ellisonleao/gruvbox.nvim",
 
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
-use('nvim-tree/nvim-tree.lua')
 use{'nvim-lua/plenary.nvim'}
 use{'ThePrimeagen/harpoon',
     branch = 'harpoon2',
@@ -45,7 +44,6 @@ use {
     -- Autocompletion
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-nvim-lsp'},
-    {'L3MON4D3/LuaSnip'},
     -- debugger
     {"mfussenegger/nvim-dap"},
     {"jay-babu/mason-nvim-dap.nvim"},
@@ -53,5 +51,12 @@ use {
 }
 
 use{"christoomey/vim-tmux-navigator"}
-
+use{"nvim-treesitter/nvim-treesitter-context"}
+use{'mfussenegger/nvim-lint'}
+use {'andymass/vim-matchup',
+    setup = function()
+      -- may set any options here
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end
+}
 end)
