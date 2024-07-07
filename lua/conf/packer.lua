@@ -44,6 +44,7 @@ use {
     -- Autocompletion
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-nvim-lsp'},
+    {'hrsh7th/cmp-buffer'},
     -- debugger
     {"mfussenegger/nvim-dap"},
     {"jay-babu/mason-nvim-dap.nvim"},
@@ -53,10 +54,10 @@ use {
 use{"christoomey/vim-tmux-navigator"}
 use{"nvim-treesitter/nvim-treesitter-context"}
 use{'mfussenegger/nvim-lint'}
-use {'andymass/vim-matchup',
-    setup = function()
-      -- may set any options here
-      vim.g.matchup_matchparen_offscreen = { method = "popup" }
-    end
-}
+--use {'andymass/vim-matchup',
+--    setup = function()
+--      -- may set any options here
+--      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+--    end
+--}
 end)

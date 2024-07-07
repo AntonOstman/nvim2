@@ -35,6 +35,9 @@ vim.keymap.set('n', '<leader>wd', '<C-w>c')
 vim.keymap.set('n', '<leader>bd', function() buffer_delete() end)
 vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
 vim.keymap.set('n', '<leader>wm', function() maximize() end)
+vim.keymap.set('n', '<leader><leader>', '<C-^>')
+vim.keymap.set('n', '<leader>;', 'gcc', {remap = true})
+vim.keymap.set('v', '<leader>;', 'gc', {remap = true})
 
 -- Tmux navigation
 --
