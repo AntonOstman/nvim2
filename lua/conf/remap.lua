@@ -39,6 +39,9 @@ vim.keymap.set('n', '<leader><leader>', '<C-^>')
 vim.keymap.set('n', '<leader>;', 'gcc', {remap = true})
 vim.keymap.set('v', '<leader>;', 'gc', {remap = true})
 
+vim.keymap.set('n', '<leader>gl', ':G log<CR>')
+vim.keymap.set('n', '<leader>gb', ':G blame<CR>')
+
 -- Tmux navigation
 --
 

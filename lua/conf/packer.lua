@@ -29,7 +29,13 @@ use{'ThePrimeagen/harpoon',
 }
 use('mbbill/undotree')
 use('tpope/vim-fugitive')
-
+use({
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	tag = "v2.3.0", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!:).
+	run = "make install_jsregexp"
+})
 use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v3.x',
@@ -44,7 +50,7 @@ use {
     -- Autocompletion
     {'hrsh7th/nvim-cmp'},
     {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/cmp-buffer'},
+    -- {'hrsh7th/cmp-buffer'},
     -- debugger
     {"mfussenegger/nvim-dap"},
     {"jay-babu/mason-nvim-dap.nvim"},
