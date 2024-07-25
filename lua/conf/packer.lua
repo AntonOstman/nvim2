@@ -60,10 +60,12 @@ use {
 use{"christoomey/vim-tmux-navigator"}
 use{"nvim-treesitter/nvim-treesitter-context"}
 use{'mfussenegger/nvim-lint'}
---use {'andymass/vim-matchup',
---    setup = function()
---      -- may set any options here
---      vim.g.matchup_matchparen_offscreen = { method = "popup" }
---    end
---}
+use{'andymass/vim-matchup',
+    setup = function()
+      -- may set any options here
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end
+}
+
+use{'AndrewRadev/linediff.vim'}
 end)

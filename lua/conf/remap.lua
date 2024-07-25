@@ -41,6 +41,7 @@ vim.keymap.set('v', '<leader>;', 'gc', {remap = true})
 
 vim.keymap.set('n', '<leader>gl', ':G log<CR>')
 vim.keymap.set('n', '<leader>gb', ':G blame<CR>')
+vim.keymap.set('n', '<leader>t', 'gt')
 
 -- Tmux navigation
 --
@@ -50,3 +51,7 @@ vim.keymap.set('n', '<C-l>', ':silent <C-U>TmuxNavigateRight<cr>')
 vim.keymap.set('n', '<C-j>', ':silent <C-U>TmuxNavigateDown<cr>')
 vim.keymap.set('n', '<C-k>', ':silent <C-U>TmuxNavigateUp<cr>')
 
+-- Remove annoying autoformat
+
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
