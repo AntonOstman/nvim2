@@ -1,7 +1,5 @@
 -- vim bindings
 
-local cmp = require("cmp")
-
 local maximized = false
 
 local function maximize()
@@ -32,16 +30,21 @@ vim.keymap.set('n', '<leader>wl', '<C-w><C-l>')
 vim.keymap.set('n', '<leader>wk', '<C-w><C-k>')
 vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
 vim.keymap.set('n', '<leader>wd', '<C-w>c')
-vim.keymap.set('n', '<leader>bd', function() buffer_delete() end)
+vim.keymap.set('n', '<leader>bd', buffer_delete)
 vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
-vim.keymap.set('n', '<leader>wm', function() maximize() end)
+vim.keymap.set('n', '<leader>wm', maximize)
 vim.keymap.set('n', '<leader><leader>', '<C-^>')
 vim.keymap.set('n', '<leader>;', 'gcc', {remap = true})
 vim.keymap.set('v', '<leader>;', 'gc', {remap = true})
 
+-- Fugitive binds
 vim.keymap.set('n', '<leader>gl', ':G log<CR>')
 vim.keymap.set('n', '<leader>gb', ':G blame<CR>')
 vim.keymap.set('n', '<leader>t', 'gt')
+
+-- LSP keybinds
+vim.keymap.set('n', '<leader>ls', vim.lsp.buf.workspace_symbol)
+vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action)
 
 -- Tmux navigation
 --
