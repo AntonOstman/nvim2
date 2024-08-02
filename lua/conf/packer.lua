@@ -29,7 +29,8 @@ require("rose-pine").setup({
         transparency = false,
     },
 })
-vim.cmd('colorscheme rose-pine')
+
+use {"catppuccin/nvim"}
 
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
