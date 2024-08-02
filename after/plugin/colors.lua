@@ -12,6 +12,17 @@ function TransEn(color)
      --   vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
    -- end
 end
+
+
+require("rose-pine").setup({
+    variant = "moon", -- auto, main, moon, or dawn
+    styles = {
+        bold = true,
+        italic = false,
+        transparency = false,
+    },
+})
+
 require("catppuccin").setup({
     flavour = "macchiato", -- latte, frappe, macchiato, mocha
     background = { -- :h background
@@ -22,5 +33,6 @@ require("catppuccin").setup({
 })
 -- TransEn()
 vim.cmd('colorscheme catppuccin')
+
 -- vim.cmd('colorscheme rose-pine')
 -- vim.cmd('colorscheme gruvbox')

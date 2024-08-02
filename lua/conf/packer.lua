@@ -14,21 +14,10 @@ return require('packer').startup(function(use)
 }
 
 use { "ellisonleao/gruvbox.nvim",
-    as = 'gruvbox',
---     config = function()
---         vim.cmd('colorscheme gruvbox')
---     end
-}
+    as = 'gruvbox'}
 
 use { "rose-pine/neovim"}
-require("rose-pine").setup({
-    variant = "moon", -- auto, main, moon, or dawn
-    styles = {
-        bold = true,
-        italic = false,
-        transparency = false,
-    },
-})
+
 
 use {"catppuccin/nvim"}
 
