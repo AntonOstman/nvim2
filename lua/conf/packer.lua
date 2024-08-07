@@ -14,12 +14,13 @@ return require('packer').startup(function(use)
 }
 
 use { "ellisonleao/gruvbox.nvim",
-    as = 'gruvbox'}
+    as = 'gruvbox',
+}
 
 use { "rose-pine/neovim"}
 
 
-use {"catppuccin/nvim"}
+use{"catppuccin/nvim"}
 
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 use('nvim-treesitter/playground')
@@ -69,4 +70,8 @@ use{'andymass/vim-matchup',
 }
 
 use{'AndrewRadev/linediff.vim'}
+
+use{ 'ThePrimeagen/git-worktree.nvim'}
+
 end)
+
