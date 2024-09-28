@@ -45,6 +45,6 @@ require("catppuccin").setup({
 })
 -- TransEn()
 
--- vim.cmd('colorscheme catppuccin')
+vim.cmd('colorscheme catppuccin')
 -- vim.cmd('colorscheme rose-pine')
-vim.cmd('colorscheme gruvbox')
+-- vim.cmd('colorscheme gruvbox')
