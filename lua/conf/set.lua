@@ -32,5 +32,7 @@ vim.o.modeline = false
 -- colors
 vim.o.termguicolors = true
 
+vim.o.wrap = true
+
 --Trainling whitespace
 -- match errorMsg /\s\+$/
