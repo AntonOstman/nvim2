@@ -34,3 +34,7 @@ vim.o.termguicolors = true
 
 --Trainling whitespace
 -- match errorMsg /\s\+$/
+vim.filetype.add({pattern = {
+    ['.*/.*.vert'] = 'glsl',
+    ['.*/.*.frag'] = 'glsl'
+}})
