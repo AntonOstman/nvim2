@@ -19,11 +19,10 @@ use { "ellisonleao/gruvbox.nvim",
 
 use { "rose-pine/neovim"}
 
-
 use{"catppuccin/nvim"}
 
 use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-use('nvim-treesitter/playground')
+-- use('nvim-treesitter/playground')
 use{'nvim-lua/plenary.nvim'}
 use{'ThePrimeagen/harpoon',
     branch = 'harpoon2',
@@ -54,24 +53,20 @@ use {
     {'hrsh7th/cmp-nvim-lsp'},
     -- {'hrsh7th/cmp-buffer'},
     -- debugger
-    {"mfussenegger/nvim-dap"},
-    {"jay-babu/mason-nvim-dap.nvim"},
+    -- {"mfussenegger/nvim-dap"},
+    -- {"jay-babu/mason-nvim-dap.nvim"},
   }
 }
 
 use{"christoomey/vim-tmux-navigator"}
 use{"nvim-treesitter/nvim-treesitter-context"}
-use{'mfussenegger/nvim-lint'}
+-- use{'mfussenegger/nvim-lint'}
 use{'andymass/vim-matchup',
     setup = function()
       -- may set any options here
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end
 }
-
-use{'AndrewRadev/linediff.vim'}
-
-use{ 'ThePrimeagen/git-worktree.nvim'}
 
 end)
 

@@ -9,6 +9,10 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 Tools
 
 ``` bash
+sudo apt install build-essential ripgrep xclip
+```
+
+``` bash
 sudo apt install build-essential ripgrep
 ```
 

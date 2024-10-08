@@ -36,18 +36,24 @@ vim.keymap.set('n', '<leader>wm', maximize)
 vim.keymap.set('n', '<leader><leader>', '<C-^>')
 vim.keymap.set('n', '<leader>;', 'gcc', {remap = true})
 vim.keymap.set('v', '<leader>;', 'gc', {remap = true})
+
+vim.keymap.set('n', '<leader>w;', 'm`A;<ESC>``')
+vim.keymap.set('n', '<leader>t', 'gt')
+
+vim.keymap.set('n', '<leader>o', 'm`o<ESC>``')
+vim.keymap.set('n', '<leader>O', 'm`O<ESC>``')
 vim.keymap.set('n', '<leader>BD', ':bufdo bd<CR>') -- kill all buffers
 
 -- Fugitive binds
 vim.keymap.set('n', '<leader>gl', ':G log<CR>')
 vim.keymap.set('n', '<leader>gb', ':G blame<CR>')
-vim.keymap.set('n', '<leader>t', 'gt')
 
 -- LSP keybinds
 vim.keymap.set('n', '<leader>ls', vim.lsp.buf.workspace_symbol)
-vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action)
+vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
 
-
+-- Tmux navigation
 vim.keymap.set('n', '<C-h>', ':silent <C-U>TmuxNavigateLeft<cr>')
 vim.keymap.set('n', '<C-l>', ':silent <C-U>TmuxNavigateRight<cr>')
 vim.keymap.set('n', '<C-j>', ':silent <C-U>TmuxNavigateDown<cr>')
