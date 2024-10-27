@@ -32,7 +32,15 @@ vim.o.modeline = false
 vim.o.termguicolors = true
 vim.o.background = "dark"
 
-vim.o.wrap = true
+-- TODO autocommand wrap to relevant file types
+-- vim.o.wrap = true
 
 --Trainling whitespace
 -- match errorMsg /\s\+$/
+
+vim.api.nvim_create_autocmd({"BufRead","BufNewFile"}, {
+  pattern = {"*.glsl", "*.vert", "*.frag"},
+  callback = function()
+    vim.bo.filetype = "glsl"
+  end,
+})
