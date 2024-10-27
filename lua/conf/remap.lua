@@ -50,8 +50,8 @@ vim.keymap.set('n', '<leader>gb', ':G blame<CR>')
 
 -- LSP keybinds
 vim.keymap.set('n', '<leader>ls', vim.lsp.buf.workspace_symbol)
-vim.keymap.set('n', '<leader>ls', vim.lsp.buf.workspace_symbol)
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
 
 -- Tmux navigation
 vim.keymap.set('n', '<C-h>', ':silent <C-U>TmuxNavigateLeft<cr>')

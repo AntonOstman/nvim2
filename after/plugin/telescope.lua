@@ -30,6 +30,7 @@ telescope.setup {
 
           -- Exclude some patterns from search
           "--glob=!**/.git/*",
+          "--glob=!**/.env/*",
           "--glob=!**/.idea/*",
           "--glob=!**/.vscode/*",
           "--glob=!**/dist/*",
@@ -49,6 +50,7 @@ telescope.setup {
                 "--files",
                 "--hidden",
                 "--glob=!**/.git/*",
+                "--glob=!**/.env/*",
                 "--glob=!**/.idea/*",
                 "--glob=!**/.vscode/*",
                 "--glob=!**/build/*",

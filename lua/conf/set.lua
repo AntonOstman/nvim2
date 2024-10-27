@@ -37,7 +37,6 @@ vim.o.background = "dark"
 
 --Trainling whitespace
 -- match errorMsg /\s\+$/
-
 vim.api.nvim_create_autocmd({"BufRead","BufNewFile"}, {
   pattern = {"*.glsl", "*.vert", "*.frag"},
   callback = function()
