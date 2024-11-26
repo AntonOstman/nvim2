@@ -31,7 +31,6 @@ vim.o.modeline = false
 -- colors
 vim.o.termguicolors = true
 vim.o.background = "dark"
-
 -- TODO autocommand wrap to relevant file types
 -- vim.o.wrap = true
 
