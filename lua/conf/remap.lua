@@ -44,8 +44,6 @@ vim.keymap.set('n', '<leader>o', 'm`o<ESC>``')
 vim.keymap.set('n', '<leader>O', 'm`O<ESC>``')
 vim.keymap.set('n', '<leader>BD', ':bufdo bd<CR>') -- kill all buffers
 
-vim.cmd([[nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>]])
-vim.keymap.set('n', '<ESC>', ':set nohls<cr>', {silent=true})
 
 -- Fugitive binds
 vim.keymap.set('n', '<leader>gl', ':G log<CR>')
@@ -66,6 +64,11 @@ vim.keymap.set('n', '<C-k>', ':silent <C-U>TmuxNavigateUp<cr>')
 
 vim.cmd('autocmd BufEnter * set formatoptions-=cro')
 vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
+
+-- Start highlight when searcing, stop on esc, highligt on *
+
+vim.cmd([[nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>]])
+vim.keymap.set('n', '<ESC>', ':set nohls<cr>', {silent=true})
 
 vim.api.nvim_create_autocmd("CmdlineEnter", {
   pattern = { "/", "?" },

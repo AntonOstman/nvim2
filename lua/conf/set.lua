@@ -35,9 +35,12 @@ vim.o.background = "dark"
 -- vim.o.wrap = true
 
 --Trainling whitespace
+
 -- match errorMsg /\s\+$/
+
+-- Set glsl files as glsl files
 vim.api.nvim_create_autocmd({"BufRead","BufNewFile"}, {
-  pattern = {"*.glsl", "*.vert", "*.frag"},
+  pattern = {"*.glsl", "*.geom","*.vert", "*.frag"},
   callback = function()
     vim.bo.filetype = "glsl"
   end,
