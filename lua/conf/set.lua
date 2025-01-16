@@ -45,3 +45,11 @@ vim.api.nvim_create_autocmd({"BufRead","BufNewFile"}, {
     vim.bo.filetype = "glsl"
   end,
 })
+
+vim.api.nvim_create_autocmd({"BufRead","BufNewFile"}, {
+  pattern = {"*.cu"},
+  callback = function()
+      vim.cmd("set commentstring=//%s")
+  end,
+})
+
