@@ -67,11 +67,8 @@ use{'andymass/vim-matchup',
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
     end
 }
-use {'tzachar/local-highlight.nvim',
-      config = function()
-        require('local-highlight').setup()
-      end
-  }
+
+use {'tzachar/local-highlight.nvim'}
 
 end)
 
