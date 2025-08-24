@@ -122,10 +122,10 @@ vim.keymap.set('n', '<leader>gl', ':G log<CR>')
 vim.keymap.set('n', '<leader>gb', ':G blame<CR>')
 
 -- LSP keybinds
-vim.keymap.set('n', '<leader>ls', vim.lsp.buf.workspace_symbol)
+-- vim.keymap.set('n', '<leader>ls', vim.lsp.buf.workspace_symbol)
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
-vim.keymap.set('n', '<leader>lh', vim.lsp.buf.signature_help)
+-- vim.keymap.set('n', '<leader>lh', vim.lsp.buf.signature_help)
 
 -- Tmux navigation
 vim.keymap.set('n', '<C-h>', ':silent <C-U>TmuxNavigateLeft<cr>')
