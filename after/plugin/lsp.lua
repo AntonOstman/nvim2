@@ -15,3 +15,23 @@ require('mason-lspconfig').setup({
     lsp_zero.default_setup,
   },
 })
+
+-- Diagnostic config
+vim.diagnostic.config({
+  virtual_text = {
+    prefix = '●',
+    spacing = 4,
+    source = "if_many",
+  },
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
+
+-- Floating window on hover
+vim.o.updatetime = 250
+-- vim.cmd [[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]]
+vim.keymap.set('n', '<leader>d', function() 
+    vim.diagnostic.open_float(nil, {focus=false});
+end)

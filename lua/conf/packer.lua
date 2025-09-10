@@ -70,5 +70,7 @@ use{'andymass/vim-matchup',
 
 use {'tzachar/local-highlight.nvim'}
 
+use {'preservim/nerdtree'}
+
 end)
 
