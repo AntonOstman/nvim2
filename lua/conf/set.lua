@@ -1,9 +1,9 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 3
+vim.opt.softtabstop = 3
+vim.opt.shiftwidth = 3
 vim.opt.expandtab = true
 
 vim.opt.wrap = false
@@ -23,10 +23,10 @@ vim.g.mapleader = " "
 vim.o.splitbelow = true
 
 vim.o.cb = 'unnamedplus'
-vim.o.signcolumn = 'no'
+vim.o.signcolumn = 'number'
 
 -- turn off annoying thing dont remember ¯\_(ツ)_/¯
-vim.o.modeline = false
+-- vim.o.modeline = false
 
 -- colors
 vim.o.termguicolors = true
@@ -34,7 +34,7 @@ vim.o.background = "dark"
 -- TODO autocommand wrap to relevant file types
 -- vim.o.wrap = true
 
---Trainling whitespace
+-- Trainling whitespace
 
 -- match errorMsg /\s\+$/
 

@@ -53,8 +53,8 @@ use {
     {'hrsh7th/cmp-nvim-lsp'},
     -- {'hrsh7th/cmp-buffer'},
     -- debugger
-    -- {"mfussenegger/nvim-dap"},
-    -- {"jay-babu/mason-nvim-dap.nvim"},
+    {"mfussenegger/nvim-dap"},
+    {"jay-babu/mason-nvim-dap.nvim"},
   }
 }
 
@@ -70,7 +70,17 @@ use{'andymass/vim-matchup',
 
 use {'tzachar/local-highlight.nvim'}
 
-use {'preservim/nerdtree'}
+-- use {'preservim/nerdtree'}
+use {'tpope/vim-abolish'}
+use {'nvim-telescope/telescope-live-grep-args.nvim'}
+use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+
+use { "anuvyklack/windows.nvim",
+   requires = "anuvyklack/middleclass",
+   config = function()
+      require('windows').setup()
+   end
+}
 
 end)
 

@@ -2,6 +2,10 @@
 
 local maximized = false
 
+local function cmd(command)
+   return table.concat({ '<Cmd>', command, '<CR>' })
+end
+
 local function maximize()
     if maximized then
         vim.cmd("wincmd=")
@@ -32,16 +36,15 @@ vim.keymap.set('n', '<leader>wl', '<C-w><C-l>')
 vim.keymap.set('n', '<leader>wk', '<C-w><C-k>')
 vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
 vim.keymap.set('n', '<leader>wd', '<C-w>c')
-vim.keymap.set('n', '<leader>bd', buffer_delete)
 vim.keymap.set('n', '<leader>wj', '<C-w><C-j>')
-vim.keymap.set('n', '<leader>wm', maximize)
+-- vim.keymap.set('n', '<leader>wm', maximize)
+vim.keymap.set('n', '<leader>wm', cmd 'WindowsMaximize')
 vim.keymap.set('n', '<leader><leader>', '<C-^>')
 vim.keymap.set('n', '<leader>;', 'gcc', {remap = true})
 vim.keymap.set('v', '<leader>;', 'gc', {remap = true})
 
 -- add semicolon at end of line
 vim.keymap.set('n', '<leader>w;', 'm`A;<ESC>``')
-vim.keymap.set('n', '<leader>t', 'gt')
 
 vim.keymap.set('n', '<leader>o', 'm`o<ESC>``')
 vim.keymap.set('n', '<leader>O', 'm`O<ESC>``')
@@ -84,7 +87,7 @@ vim.keymap.set('n', '<leader>sh', function()
   -- TODO: Lookup can be made more efficient by splitting 
   -- inc and src search on the found extension
   local search_dirs = {
-      cur_dir_name, "inc", "include", "Inc", "Include", "src", "Src", "Source", "source", 
+      cur_dir_name, "inc", "include", "Inc", "Include", "src", "Src", "Source", "source", "Interface", "interface"
   }
 
   local targets = swap_exts[ext]
@@ -146,4 +149,13 @@ vim.api.nvim_create_autocmd("CmdlineEnter", {
 })
 
 -- nerdtree
-vim.api.nvim_set_keymap('n', '<C-t>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>t', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>ft', ':NERDTreeFind<CR>', { noremap = true, silent = true })
+
+-- Put this in your init.lua or a Lua module you source from there
+
+-- debugging
+
+vim.keymap.set('n', '<leader>du', require("dapui").toggle)
+vim.keymap.set('n', '<leader>dc', ":DapContinue<cr>")
+vim.keymap.set('n', '<leader>db', cmd "DapToggleBreakpoint")
