@@ -43,8 +43,10 @@ vim.keymap.set('n', '<leader><leader>', '<C-^>')
 vim.keymap.set('n', '<leader>;', 'gcc', {remap = true})
 vim.keymap.set('v', '<leader>;', 'gc', {remap = true})
 
--- add semicolon at end of line
+-- add symbol at end of line
 vim.keymap.set('n', '<leader>w;', 'm`A;<ESC>``')
+vim.keymap.set('n', '<leader>w:', 'm`A:<ESC>``')
+vim.keymap.set('n', '<leader>w,', 'm`A,<ESC>``')
 
 vim.keymap.set('n', '<leader>o', 'm`o<ESC>``')
 vim.keymap.set('n', '<leader>O', 'm`O<ESC>``')
